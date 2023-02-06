@@ -1,5 +1,7 @@
 package org.example;
 import java.util.Scanner;
+import java.util.logging.Logger;
+
 abstract class Calculator {
     int num1, num2;
     public void setNum1(int num1) {
@@ -36,20 +38,21 @@ class Division extends Calculator {
 }
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Simple Calculator");
+        Logger l = Logger.getLogger("com.api.jar");
+        l.info("Simple Calculator");
         Scanner sc = new Scanner(System.in);
-        System.out.println("Enter first number: ");
+        l.info("Enter first number: ");
         int num1 = sc.nextInt();
-        System.out.println("Enter second number: ");
+        l.info("Enter second number: ");
         int num2 = sc.nextInt();
         while (true) {
-            System.out.println("\n choose a option");
-            System.out.println("choose the options to perform operations ");
-            System.out.println("Enter 1 for addition");
-            System.out.println("Enter 2 for subtraction");
-            System.out.println("Enter 3 for multiplication");
-            System.out.println("Enter 4 for division");
-            System.out.println("Enter 0 to exit");
+            l.info("\n choose a option");
+            l.info("choose the options to perform operations ");
+            l.info("Enter 1 for addition");
+            l.info("Enter 2 for subtraction");
+            l.info("Enter 3 for multiplication");
+            l.info("Enter 4 for division");
+            l.info("Enter 0 to exit");
             int choice = sc.nextInt();
             Calculator c = null;
             switch (choice) {
@@ -68,12 +71,12 @@ public class Main {
                 default:
                     sc.close();
                     System.exit(0);
-                    System.out.println("Invalid choice");
+                    l.info("Invalid choice");
                     System.exit(0);
             }
             c.setNum1(num1);
             c.setNum2(num2);
-            System.out.println("Result: " + c.calculate());
+            l.info("Result: " + c.calculate());
         }
     }
 }
