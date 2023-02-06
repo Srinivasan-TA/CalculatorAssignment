@@ -5,9 +5,11 @@ import java.util.logging.Logger;
 abstract class Calculator {
     int num1, num2;
     public void setNum1(int num1) {
+
         this.num1 = num1;
     }
     public void setNum2(int num2) {
+
         this.num2 = num2;
     }
      abstract int calculate();
@@ -15,24 +17,28 @@ abstract class Calculator {
 class Addition extends Calculator {
     @Override
     int calculate() {
-    return num1 + num2;
+
+        return num1 + num2;
     }
 }
 class Subtraction extends Calculator {
     @Override
     int calculate() {
+
         return num1 - num2;
     }
 }
 class Multiplication extends Calculator {
     @Override
     int calculate() {
+
         return num1 * num2;
     }
 }
 class Division extends Calculator {
     @Override
     int calculate() {
+
         return num1 / num2;
     }
 }
