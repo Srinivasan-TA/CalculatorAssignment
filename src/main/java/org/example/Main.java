@@ -3,7 +3,8 @@ import java.util.Scanner;
 import java.util.logging.Logger;
 
 abstract class Calculator {
-    double num1, num2;
+    double num1;
+    double num2;
     public void setNum1(double num1) {
 
         this.num1 = num1;
