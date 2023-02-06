@@ -3,41 +3,40 @@ import java.util.Scanner;
 import java.util.logging.Logger;
 
 abstract class Calculator {
-    int num1, num2;
-    public void setNum1(int num1) {
+    double num1, num2;
+    public void setNum1(double num1) {
 
         this.num1 = num1;
     }
-    public void setNum2(int num2) {
+    public void setNum2(double num2) {
 
         this.num2 = num2;
     }
-     abstract int calculate();
+     abstract double calculate();
 }
 class Addition extends Calculator {
     @Override
-    int calculate() {
-
+    double calculate() {
         return num1 + num2;
     }
 }
 class Subtraction extends Calculator {
     @Override
-    int calculate() {
+    double calculate() {
 
         return num1 - num2;
     }
 }
 class Multiplication extends Calculator {
     @Override
-    int calculate() {
+    double calculate() {
 
         return num1 * num2;
     }
 }
 class Division extends Calculator {
     @Override
-    int calculate() {
+    double calculate() {
 
         return num1 / num2;
     }
@@ -48,9 +47,9 @@ public class Main {
         l.info("Simple Calculator");
         Scanner sc = new Scanner(System.in);
         l.info("Enter first number: ");
-        int num1 = sc.nextInt();
+        double num1 = sc.nextDouble();
         l.info("Enter second number: ");
-        int num2 = sc.nextInt();
+        double num2 = sc.nextDouble();
         while (true) {
             l.info("\n choose a option");
             l.info("choose the options to perform operations ");
@@ -82,7 +81,8 @@ public class Main {
             }
             c.setNum1(num1);
             c.setNum2(num2);
-            l.info("Result: " + c.calculate());
+            String z ="Result: " + c.calculate();
+            l.info(z);
         }
     }
 }
