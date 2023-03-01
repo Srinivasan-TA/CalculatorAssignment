@@ -3,7 +3,6 @@ import java.util.Scanner;
 import java.util.logging.Logger;
 public class Main {
     public static void main(String[] args) {
-
             Logger l = Logger.getLogger("com.api.jar");
             l.info("Simple Calculator");
             Scanner sc = new Scanner(System.in);
